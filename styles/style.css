@@ -1,5 +1,178 @@
 /* CSS Document */
 *, *::after, *::before {
   box-sizing:border-box;  
+  margin: 0;
+  padding: 0;
 }
 
+/****************************>>> HEADER <<<******************************/
+
+header section:first-of-type {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  padding: 8px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row-reverse; */
+  background-color: darkgray;
+  align-items: center;
+  height: 60px;
+}
+
+nav ul {
+  display: flex;
+  /* justify-content: space-evenly; */
+  /* width: 50%; */
+  list-style: none;
+}
+
+nav ul a {
+  color: black;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  padding-right: 14px;
+}
+
+nav a:first-of-type img {
+  max-width: 120px;
+  /* padding: 0 10px 0 10px; */
+  
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+nav button:focus {
+  /* background-color: blue; DIT MOET IK NOG FIXEN kan ook voor lin kjes */
+}
+
+nav button a img {
+  width: 20px;
+  height: 19px;
+}
+nav button img {
+  width: 20px;
+  height: 19px;
+}
+
+nav button:last-of-type {
+  order: -1;
+  display: none;
+}
+
+
+
+
+
+/****** VOOR DE 2 VERSCHILLENDE UL's *******/
+
+/* nav ul:first-of-type {
+  order: 1;
+}
+nav ul:last-of-type {
+  order: 3;
+}
+nav a:first-of-type {
+  order: 2;
+}
+nav button:first-of-type {
+  order: 4;
+}
+nav button:last-of-type {
+  display: none;
+  order: -1;
+} */
+
+
+@media screen and (max-width: 798px) {
+  body {
+    overflow-x: hidden;
+  }
+  nav ul {
+    position: absolute;
+    left: 0px;
+    top: 89px;
+    height: calc(100vh - 89px);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    width: 65%;
+    transform: translateX(-70vw);
+    transition: 0.3s ease-out;
+  }
+
+
+
+  nav ul li a {
+    color: white;
+    opacity: 0%;
+    transition: 3s; /***>>>>>> WERKT NOG NIET <<<<***/
+  }
+  
+  nav button:last-of-type {
+    display: block;
+  }
+  
+}
+
+
+
+
+nav ul.zichtbaar {
+  transform: translateX(0);
+
+}
+nav ul li a {
+  opacity: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************>>> HEADER END <<<******************************/
+
+/* main section:first-of-type {
+  background-image: url("//images/contents/Banner_Men.jpg");
+  width: 50%;
+} */
+
+/* background-image: url("//images/contents/Banner_Women.jpg"); */
+
+
+
+
+
+/****************************>>> MAIN <<<******************************/
+
+main section:first-of-type img{
+  width: 100%;
+  display: block;
+}
+main section:first-of-type {
+  display: flex;
+}
+
+
+
+
+/****************************>>> MAIN END <<<******************************/
