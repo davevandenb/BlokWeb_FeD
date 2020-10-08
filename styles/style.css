@@ -5,7 +5,15 @@
   padding: 0;
 }
 
+
+
 /****************************>>> HEADER <<<******************************/
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* zodat de header boven aan ligt */
+}
 
 header section:first-of-type {
   font-family: 'Raleway', sans-serif;
@@ -15,25 +23,47 @@ header section:first-of-type {
   justify-content: center;
   background-color: black;
   padding: 8px;
+  /* display: relative; */
 }
 
-nav {
+header section:first-of-type button img {
+  height: 12px;
+  width: auto;
+  /* display: absolute; */
+  /* right: 0px; */
+  /* display: none; */
+}
+header section:first-of-type button {
+  background: transparent;
+  border: none;
+  outline: none;
+  justify-content: end;
+  position: fixed;
+  right: 10px;
+}
+
+header section:first-of-type.ontzichtbaar {
+  display: none;
+}
+
+header nav {
   display: flex;
   justify-content: space-between;
   /* flex-direction: row-reverse; */
   background-color: darkgray;
   align-items: center;
   height: 60px;
+  padding: 0 20px 0 20px;
 }
 
-nav ul {
+header nav ul {
   display: flex;
   /* justify-content: space-evenly; */
   /* width: 50%; */
   list-style: none;
 }
 
-nav ul a {
+header nav ul a {
   color: black;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
@@ -41,26 +71,26 @@ nav ul a {
   padding-right: 14px;
 }
 
-nav a:first-of-type img {
+header nav a:first-of-type img {
   max-width: 120px;
   /* padding: 0 10px 0 10px; */
   
 }
 
-nav button {
+header nav button {
   background: transparent;
   border: none;
   outline: none;
 }
-nav button:focus {
+header nav button:focus {
   /* background-color: blue; DIT MOET IK NOG FIXEN kan ook voor lin kjes */
 }
 
-nav button a img {
+header nav button a img {
   width: 20px;
   height: 19px;
 }
-nav button img {
+header nav button img {
   width: 20px;
   height: 19px;
 }
@@ -164,14 +194,139 @@ nav ul li a {
 
 /****************************>>> MAIN <<<******************************/
 
-main section:first-of-type img{
-  width: 100%;
-  display: block;
-}
-main section:first-of-type {
-  display: flex;
+
+main {
+  overflow-x: hidden;
 }
 
+main nav img{
+  width: 100%;
+}
+main nav {
+  display: flex;
+  position: relative;
+  
+}
+main nav section {
+  max-width: 50vw;
+  position: relative;
+}
+
+
+main nav section:first-of-type h1{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+
+  text-decoration: none;
+  -webkit-text-stroke: 1.5px white;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5em;
+  text-transform:uppercase;
+  font-family: sans-serif;
+}
+main nav section:last-of-type h1{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform:translate(-50%,-50%) scaleX(.7);
+/* 
+kijk ik hiernaar @media 
+intersection observer JAVA gedoe, als snapt ez 
+https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API 
+*/
+
+
+  text-decoration: none;
+  -webkit-text-stroke: 1.5px white;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5em;
+  text-transform:uppercase;
+  font-family: sans-serif;
+}
+main nav section:last-of-type h1:hover {
+  -webkit-text-fill-color: white;
+}
+main nav section:first-of-type h1:hover {
+  -webkit-text-fill-color: white;
+}
+main nav section:first-of-type section:last-of-type a:focus {
+  -webkit-text-stroke: 1.5px red;
+} /* WERKT NOG NIET ###>>> deze 2 in javascript maken omdat ik event listener op a nodig heb */
+
+@media screen and (min-width: 798px) {
+  main nav section:last-of-type h1 {
+    transform: translate(-50%,-50%) scaleX(1);
+    font-size: 5em;
+  }
+  main nav section:first-of-type h1 {
+    font-size: 5em;
+  }
+}
+
+
+.citizens {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.citizens div{ 
+  max-width: 45vw;
+  margin: 20px 10px 0 10px;
+  flex-direction: column;
+/*   
+  object-fit: cover;
+  width: 300px;
+  height: 330px; */
+}
+
+
+
+.citizens div p {
+  max-width: 42vw;
+}
+
+.citizens div:first-of-type img {
+  width: max-content;
+  max-width: 40vw;
+  height: 200px;
+}
+.citizens div:last-of-type img {
+  width: max-content;
+  max-width: 40vw;
+  height: 200px;
+  
+}
+
+
+
+
+
+
+
+
+/***** GRID *****/
+
+.grid {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  /* grid-auto-columns: minmax(40vw, 45vw); */
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 5vw;
+}
+
+.items a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.items img {
+  max-width: 100%;
+  height: auto;
+
+}
 
 
 
