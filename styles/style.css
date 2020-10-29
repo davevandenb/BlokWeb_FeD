@@ -1,8 +1,21 @@
 /* CSS Document */
+/********** IMPORT ***********/
+@font-face {
+	font-family: 'fakt';
+	src: url(typeface/FaktPro-Blond.ttf);
+}
+@font-face {
+	font-family: 'faktMedium';
+	src: url(typeface/FaktPro-Regluar.ttf);
+}
+
+/*********** PRE-SETS ***********/
 *, *::after, *::before {
   box-sizing:border-box;  
   margin: 0;
   padding: 0;
+  font-family: 'fakt', sans-serif;
+  font-weight: 145;
 }
 
 
@@ -16,7 +29,6 @@ header {
 }
 
 header section:first-of-type {
-  font-family: 'Raleway', sans-serif;
   font-size: 11px;
   color: white;
   display: flex;
@@ -42,37 +54,54 @@ header section:first-of-type button {
   right: 10px;
 }
 
-header section:first-of-type.ontzichtbaar {
+header > section:first-of-type.ontzichtbaar {
   display: none;
 }
+
 
 header nav {
   display: flex;
   justify-content: space-between;
   /* flex-direction: row-reverse; */
-  background-color: darkgray;
+  background-color: white;
   align-items: center;
-  height: 60px;
+  height: 50px;
   padding: 0 20px 0 20px;
 }
 
 header nav ul {
+  position: absolute;
+  left: 0px;
+  top: 79px;
+  height: calc(100vh - 79px);
+  background-color: black;
   display: flex;
-  /* justify-content: space-evenly; */
-  /* width: 50%; */
+  flex-direction: column;
+  padding-top: 20px;
+  width: 75%;
   list-style: none;
+  transform: translateX(-75vw);
+  transition: 0.3s ease-out;
+  padding: 35px 15px 35px 5px;
+}
+
+header nav ul li {
+  margin-bottom: 16px;
+}
+header nav ul li a:hover {
+  color: rgb(145, 145, 145);
 }
 
 header nav ul a {
   color: black;
   text-decoration: none;
-  font-family: 'Raleway', sans-serif;
   font-size: 14px;
-  padding-right: 14px;
+  padding: 14px;
 }
 
 header nav a:first-of-type img {
-  max-width: 120px;
+  height: auto;
+  max-width: 100px;
   /* padding: 0 10px 0 10px; */
   
 }
@@ -82,9 +111,7 @@ header nav button {
   border: none;
   outline: none;
 }
-header nav button:focus {
-  /* background-color: blue; DIT MOET IK NOG FIXEN kan ook voor lin kjes */
-}
+
 
 header nav button a img {
   width: 20px;
@@ -96,11 +123,15 @@ header nav button img {
 }
 
 nav button:last-of-type {
+  display: block;
   order: -1;
-  display: none;
 }
 
-
+nav ul li a {
+  color: white;
+  opacity: 0%;
+  transition: .3s;
+}
 
 
 
@@ -123,23 +154,10 @@ nav button:last-of-type {
   order: -1;
 } */
 
-
+/* 
 @media screen and (max-width: 798px) {
   body {
     overflow-x: hidden;
-  }
-  nav ul {
-    position: absolute;
-    left: 0px;
-    top: 89px;
-    height: calc(100vh - 89px);
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    width: 65%;
-    transform: translateX(-70vw);
-    transition: 0.3s ease-out;
   }
 
 
@@ -147,25 +165,40 @@ nav button:last-of-type {
   nav ul li a {
     color: white;
     opacity: 0%;
-    transition: 3s; /***>>>>>> WERKT NOG NIET <<<<***/
-  }
-  
-  nav button:last-of-type {
-    display: block;
-  }
-  
-}
+    transition: 3s; /***>>>>>> WERKT NOG NIET <<<<*/
 
 
 
 
 nav ul.zichtbaar {
   transform: translateX(0);
-
 }
 nav ul li a {
   opacity: 100%;
 }
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 798px) {
+
+  nav button:last-of-type {
+    display: none;
+  }
+
+
+
+} 
+
+
+
+
+
 
 
 
@@ -199,94 +232,88 @@ main {
   overflow-x: hidden;
 }
 
+main nav {
+  display: flex;
+  position: relative; 
+}
+
+main nav a {
+  width: 50%;
+  position: relative;
+  outline: none;
+}
+
 main nav img{
   width: 100%;
 }
-main nav {
+
+
+main>nav>a>h2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
   display: flex;
-  position: relative;
-  
-}
-main nav section {
-  max-width: 50vw;
-  position: relative;
-}
-
-
-main nav section:first-of-type h1{
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform:translate(-50%,-50%);
+  justify-content: center;
+  align-items: center;
 
   text-decoration: none;
   -webkit-text-stroke: 1.5px white;
   -webkit-text-fill-color: transparent;
-  font-size: 3.5em;
+  font-size: 4.5em;
+  font-weight: 700;
   text-transform:uppercase;
-  font-family: sans-serif;
 }
-main nav section:last-of-type h1{
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform:translate(-50%,-50%) scaleX(.7);
-/* 
-kijk ik hiernaar @media 
-intersection observer JAVA gedoe, als snapt ez 
-https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API 
-*/
-
-
-  text-decoration: none;
-  -webkit-text-stroke: 1.5px white;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.5em;
-  text-transform:uppercase;
-  font-family: sans-serif;
+main>nav>a:last-of-type>h2 {
+  transform: scaleX(.75);
 }
-main nav section:last-of-type h1:hover {
+
+main nav a h2:hover {
   -webkit-text-fill-color: white;
 }
-main nav section:first-of-type h1:hover {
-  -webkit-text-fill-color: white;
-}
-main nav section:first-of-type section:last-of-type a:focus {
-  -webkit-text-stroke: 1.5px red;
+
+main nav a:focus h2{
+  -webkit-text-stroke: 1.5px rgb(48, 75, 114);
 } /* WERKT NOG NIET ###>>> deze 2 in javascript maken omdat ik event listener op a nodig heb */
 
-@media screen and (min-width: 798px) {
-  main nav section:last-of-type h1 {
-    transform: translate(-50%,-50%) scaleX(1);
-    font-size: 5em;
-  }
-  main nav section:first-of-type h1 {
-    font-size: 5em;
-  }
-}
 
 
-.citizens {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+@media screen and (min-width: 640px) {
+  
+  main>nav>a:last-of-type>h2 {
+    transform: scaleX(.8);
+  }
+  main>nav>a>h2{
+    font-size: 6.2em;
+  }
+
+
 }
-.citizens div{ 
+/* .citizens div{ 
   max-width: 45vw;
   margin: 20px 10px 0 10px;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap; */
 /*   
   object-fit: cover;
   width: 300px;
   height: 330px; */
-}
 
 
 
+
+
+/* 
 .citizens div p {
-  max-width: 42vw;
+  max-width: 150px;
+  background-color: cornflowerblue;
 }
-
+.citizens div p:first-of-type {
+  width: 65px;
+  background-color: coral;
+}
 .citizens div:first-of-type img {
   width: max-content;
   max-width: 40vw;
@@ -295,39 +322,343 @@ main nav section:first-of-type section:last-of-type a:focus {
 .citizens div:last-of-type img {
   width: max-content;
   max-width: 40vw;
-  height: 200px;
+  height: 240px;
   
+} */
+
+
+
+
+
+main>section:first-of-type {
+  padding: .7em;
 }
-
-
-
-
-
-
 
 
 /***** GRID *****/
 
-.grid {
+.spotlightProducts {
   display: grid;
-  grid-template-columns: 40vw 40vw;
-  /* grid-auto-columns: minmax(40vw, 45vw); */
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 5vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 60vw;
+  grid-gap: .5em;
+  /***** MOET NOG DOEN: @MEDIA *****/
 }
 
-.items a {
+.spotlightProducts a {
   text-decoration: none;
   color: black;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.items img {
+.spotlightProducts h2 {
+  font-size: 1em;
+  font-weight: 300;
+  justify-content: flex-start;
+  max-width: calc(100% - 50px);
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+.spotlightProducts p {
+  max-width: 50px;
+  /* border: dotted 2px red; */
+  justify-content: flex-end;
+  font-family: 'faktMedium', sans-serif;
+  font-size: 13px;
+}
+
+.spotlightProducts img {
   max-width: 100%;
   height: auto;
-
+  max-height: 700px;
+  order: -1;
+  margin-bottom: 15px;
 }
+
+
+
+
+/* main>section:first-of-type>a:first-of-type{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+} */
+main>section:first-of-type>a:first-of-type, main>section:first-of-type>a:nth-of-type(2) {
+  padding: 1em 0 calc(1em + 2vw) 0;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 27px;
+}
+
+main>section:first-of-type>a:first-of-type>img, main>section:first-of-type>a:nth-of-type(2)>img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+main>section:first-of-type>a:first-of-type>p, main>section:first-of-type>a:nth-of-type(2)>p{
+  /* border: dotted 2px red; */
+  max-width: none;
+  width: 70px;
+  padding-bottom: .45em;
+}
+main>section:first-of-type>a:first-of-type>h3, main>section:first-of-type>a:nth-of-type(2)>h3{
+  /* border: dotted 2px red; */
+  max-width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-right: 15px;
+}
+
+
+main>section>a:nth-last-of-type(2), main>section>a:last-of-type {
+    align-content: flex-start;
+    padding-top: 50px;
+}
+
+main>section>a h5 {
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: solid 1px black;
+  /* flex-wrap: nowrap;
+  flex-direction: column; */
+}
+main>section>a:nth-last-of-type(2)>p, main>section>a:last-of-type>p{
+  min-width: 40vw;
+  padding-top: 10px;
+}
+
+main>section>a:nth-last-of-type(2) img, main>section>a:last-of-type img{
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /****************************>>> MAIN END <<<******************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************>>> FOOTER <<<******************************/
+
+footer {
+  background-color: black;
+  color: white;
+  padding: .7em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 12px;
+  /* border: dotted 2px yellow; */
+  align-content: center;
+
+}
+
+footer h4 {
+  font-size: 12px;
+  font-weight: 140;
+  padding: 2px 10px 2px 0;
+  /* border: dotted 2px red; */
+  display: inline-block;
+  text-transform: uppercase;
+}
+footer>section:first-of-type>p {
+  padding: 15px 0 3px 0;
+}
+
+footer>section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: dotted 2px blue; */
+  padding: 25px 0 35px 0;
+}
+
+input {
+  width: 270px;
+  height: 35px;
+  margin: 15px 0;
+  padding: 0 10px;
+  text-align: center;
+  border-radius: 0;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  outline: none;
+}
+input::placeholder {
+  color: white;
+  font-weight: 100;
+  font-size: 12px;
+}
+footer>section>button {
+  width: 270px;
+  height: 35px;
+  text-align: center;
+  border-radius: 0;
+  border: none;
+  background-color: white;
+  outline: none;
+}
+
+
+
+
+
+
+
+
+/****>>> Fold out menu <<<****/
+
+footer>section>section {
+  border-top: solid 1px white;
+}
+
+footer>section:last-of-type {
+  border-bottom: solid 1px white;
+  width: 100%;
+}
+
+footer>section>section h2 {
+  list-style: none;
+  padding: 10px 0 10px 0;
+  width: 95%;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+footer>section>section h2:hover {
+  color: rgb(212, 212, 212);
+}
+
+footer>section>section>ul>li>a:hover {
+  color: rgb(212, 212, 212);
+}
+footer>section>section>ul>li {
+  padding-top: 10px;
+}
+footer>section>section>ul {
+  list-style: none;
+  display: none;
+}
+footer>section>section>ul.laatZien {
+  display: unset;
+}
+/* .laatZien {
+  display: visible;
+} */
+
+
+footer>section>section>ul>li:last-of-type {
+  padding-bottom: 30px;
+}
+
+footer>section>section>ul>li>a {
+  text-decoration: none;
+  color: white;
+}
+
+footer section>section>p {
+  align-self: center;
+  font-size: 16px;
+
+  /* transform-origin: rotate(12deg); */
+  color: white;
+}
+
+footer>section:last-of-type>section:first-of-type {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+footer>section:last-of-type>section:nth-of-type(2) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+footer>section:last-of-type>section:last-of-type {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+footer>p {
+  align-self: center;
+  /* border: dotted 2px rgb(73, 16, 75); */
+  font-size: 10px;
+  padding: 20px 0 27px 0;
+}
+
+
+
+
+
+
+
+
+/****>>> ERROR PAGE <<<****/
+
+.error {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.error main {
+  height: calc(100vh - 470px);
+  padding: 20vw;
+}
+.error div {
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
