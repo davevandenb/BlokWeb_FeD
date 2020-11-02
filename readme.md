@@ -59,10 +59,10 @@ Ik ben goed op weg maar moet wel een beetje sneller gaan werken, ik blijf hangen
 **Je opdracht:** https://olafhussein.com
 
 **Screenshot(s):**
-![impressie website screenshot 1](images/process/ss_site-olaf1.svg)
-![impressie website screenshot 2](images/process/ss_site-olaf2.svg)
+![impressie website screenshot 1](images/process/ss_site-olaf1.png)
+![impressie website screenshot 2](images/process/ss_site-olaf2.png)
 
 
 **Breakdown-schets(en):**
-![breakdownschets homepagina](images/breakdownschets_homepagina.jpg)
-![breakdownschets gedetailleerd](images/breakdownschets_drawn.jpg)
+![breakdownschets homepagina](images/process/breakdownschets_homepagina.png)
+![breakdownschets gedetailleerd](images/process/breakdownschets_drawn.jpg)
