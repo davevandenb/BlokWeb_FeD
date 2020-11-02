@@ -2,11 +2,15 @@
 /********** IMPORT ***********/
 @font-face {
 	font-family: 'fakt';
-	src: url(typeface/FaktPro-Blond.ttf);
+	src: url(../typeface/FaktPro-Blond.ttf);
 }
 @font-face {
 	font-family: 'faktMedium';
-	src: url(typeface/FaktPro-Regluar.ttf);
+	src: url(../typeface/FaktPro-Normal.ttf);
+}
+@font-face {
+  font-family: 'faktBold';
+	src: url(../typeface/FaktPro-SemiBold.ttf);
 }
 
 /*********** PRE-SETS ***********/
@@ -20,7 +24,9 @@
 
 
 
-/****************************>>> HEADER <<<******************************/
+/**************************************************************************************************************************
+>>>>>>>>>> HEADER <<<<<<<<<<
+**************************************************************************************************************************/
 
 header {
   position: sticky;
@@ -35,16 +41,8 @@ header section:first-of-type {
   justify-content: center;
   background-color: black;
   padding: 8px;
-  /* display: relative; */
 }
 
-header section:first-of-type button img {
-  height: 12px;
-  width: auto;
-  /* display: absolute; */
-  /* right: 0px; */
-  /* display: none; */
-}
 header section:first-of-type button {
   background: transparent;
   border: none;
@@ -54,14 +52,19 @@ header section:first-of-type button {
   right: 10px;
 }
 
+header section:first-of-type button img {
+  height: 12px;
+  width: auto;
+}
+
 header > section:first-of-type.ontzichtbaar {
   display: none;
 }
 
-
 header nav {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   /* flex-direction: row-reverse; */
   background-color: white;
   align-items: center;
@@ -93,17 +96,17 @@ header nav ul li a:hover {
 }
 
 header nav ul a {
-  color: black;
   text-decoration: none;
   font-size: 14px;
   padding: 14px;
+  color: white;
+  opacity: 0%;
+  transition: .3s;
 }
 
 header nav a:first-of-type img {
   height: auto;
   max-width: 100px;
-  /* padding: 0 10px 0 10px; */
-  
 }
 
 header nav button {
@@ -111,7 +114,6 @@ header nav button {
   border: none;
   outline: none;
 }
-
 
 header nav button a img {
   width: 20px;
@@ -127,49 +129,6 @@ nav button:last-of-type {
   order: -1;
 }
 
-nav ul li a {
-  color: white;
-  opacity: 0%;
-  transition: .3s;
-}
-
-
-
-/****** VOOR DE 2 VERSCHILLENDE UL's *******/
-
-/* nav ul:first-of-type {
-  order: 1;
-}
-nav ul:last-of-type {
-  order: 3;
-}
-nav a:first-of-type {
-  order: 2;
-}
-nav button:first-of-type {
-  order: 4;
-}
-nav button:last-of-type {
-  display: none;
-  order: -1;
-} */
-
-/* 
-@media screen and (max-width: 798px) {
-  body {
-    overflow-x: hidden;
-  }
-
-
-
-  nav ul li a {
-    color: white;
-    opacity: 0%;
-    transition: 3s; /***>>>>>> WERKT NOG NIET <<<<*/
-
-
-
-
 nav ul.zichtbaar {
   transform: translateX(0);
 }
@@ -177,56 +136,13 @@ nav ul li a {
   opacity: 100%;
 }
 
-
-
-
-
-
-
-
-
-@media screen and (min-width: 798px) {
-
-  nav button:last-of-type {
-    display: none;
-  }
-
-
-
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /****************************>>> HEADER END <<<******************************/
 
-/* main section:first-of-type {
-  background-image: url("//images/contents/Banner_Men.jpg");
-  width: 50%;
-} */
-
-/* background-image: url("//images/contents/Banner_Women.jpg"); */
 
 
-
-
-
-/****************************>>> MAIN <<<******************************/
-
+/**************************************************************************************************************************
+>>>>>>>>>> MAIN <<<<<<<<<<
+**************************************************************************************************************************/
 
 main {
   overflow-x: hidden;
@@ -247,7 +163,6 @@ main nav img{
   width: 100%;
 }
 
-
 main>nav>a>h2{
   position: absolute;
   top: 0;
@@ -258,14 +173,16 @@ main>nav>a>h2{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
 
   text-decoration: none;
   -webkit-text-stroke: 1.5px white;
   -webkit-text-fill-color: transparent;
   font-size: 4.5em;
-  font-weight: 700;
+  font-weight: 900;
   text-transform:uppercase;
 }
+
 main>nav>a:last-of-type>h2 {
   transform: scaleX(.75);
 }
@@ -276,96 +193,41 @@ main nav a h2:hover {
 
 main nav a:focus h2{
   -webkit-text-stroke: 1.5px rgb(48, 75, 114);
-} /* WERKT NOG NIET ###>>> deze 2 in javascript maken omdat ik event listener op a nodig heb */
-
-
-
-@media screen and (min-width: 640px) {
-  
-  main>nav>a:last-of-type>h2 {
-    transform: scaleX(.8);
-  }
-  main>nav>a>h2{
-    font-size: 6.2em;
-  }
-
-
 }
-/* .citizens div{ 
-  max-width: 45vw;
-  margin: 20px 10px 0 10px;
-  flex-direction: row;
-  flex-wrap: wrap; */
-/*   
-  object-fit: cover;
-  width: 300px;
-  height: 330px; */
-
-
-
-
-
-/* 
-.citizens div p {
-  max-width: 150px;
-  background-color: cornflowerblue;
-}
-.citizens div p:first-of-type {
-  width: 65px;
-  background-color: coral;
-}
-.citizens div:first-of-type img {
-  width: max-content;
-  max-width: 40vw;
-  height: 200px;
-}
-.citizens div:last-of-type img {
-  width: max-content;
-  max-width: 40vw;
-  height: 240px;
-  
-} */
-
-
-
-
 
 main>section:first-of-type {
   padding: .7em;
 }
 
 
-/***** GRID *****/
+/****>>> GRID <<<****/
 
 .spotlightProducts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr 1fr 1fr 60vw;
+  grid-template-rows: auto auto auto auto 60vw;
   grid-gap: .5em;
-  /***** MOET NOG DOEN: @MEDIA *****/
 }
 
 .spotlightProducts a {
   text-decoration: none;
   color: black;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-between;
+  grid-template-columns: 1fr;
 }
 
 .spotlightProducts h2 {
   font-size: 1em;
   font-weight: 300;
-  justify-content: flex-start;
   max-width: calc(100% - 50px);
-  margin-bottom: 15px;
+  min-height: 40px;
   font-size: 13px;
 }
+
 .spotlightProducts p {
   max-width: 50px;
-  /* border: dotted 2px red; */
-  justify-content: flex-end;
   font-family: 'faktMedium', sans-serif;
   font-size: 13px;
 }
@@ -376,16 +238,10 @@ main>section:first-of-type {
   max-height: 700px;
   order: -1;
   margin-bottom: 15px;
+  grid-column: 1/-1;
+  object-fit: contain;
 }
 
-
-
-
-/* main>section:first-of-type>a:first-of-type{
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-} */
 main>section:first-of-type>a:first-of-type, main>section:first-of-type>a:nth-of-type(2) {
   padding: 1em 0 calc(1em + 2vw) 0;
   display: flex;
@@ -400,32 +256,29 @@ main>section:first-of-type>a:first-of-type>img, main>section:first-of-type>a:nth
 }
 
 main>section:first-of-type>a:first-of-type>p, main>section:first-of-type>a:nth-of-type(2)>p{
-  /* border: dotted 2px red; */
   max-width: none;
   width: 70px;
   padding-bottom: .45em;
 }
+
 main>section:first-of-type>a:first-of-type>h3, main>section:first-of-type>a:nth-of-type(2)>h3{
-  /* border: dotted 2px red; */
   max-width: 100%;
   text-transform: uppercase;
   font-size: 14px;
   padding-right: 15px;
 }
 
-
 main>section>a:nth-last-of-type(2), main>section>a:last-of-type {
-    align-content: flex-start;
-    padding-top: 50px;
+  align-content: flex-start;
+  padding-top: 50px;
 }
 
 main>section>a h5 {
   text-transform: uppercase;
   padding-bottom: 5px;
   border-bottom: solid 1px black;
-  /* flex-wrap: nowrap;
-  flex-direction: column; */
 }
+
 main>section>a:nth-last-of-type(2)>p, main>section>a:last-of-type>p{
   min-width: 40vw;
   padding-top: 10px;
@@ -438,32 +291,13 @@ main>section>a:nth-last-of-type(2) img, main>section>a:last-of-type img{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /****************************>>> MAIN END <<<******************************/
 
 
 
-
-
-
-
-
-
-
-
-
-/****************************>>> FOOTER <<<******************************/
+/**************************************************************************************************************************
+>>>>>>>>>> FOOTER <<<<<<<<<<
+**************************************************************************************************************************/
 
 footer {
   background-color: black;
@@ -526,12 +360,6 @@ footer>section>button {
 }
 
 
-
-
-
-
-
-
 /****>>> Fold out menu <<<****/
 
 footer>section>section {
@@ -550,6 +378,7 @@ footer>section>section h2 {
   font-size: 12px;
   text-transform: uppercase;
 }
+
 footer>section>section h2:hover {
   color: rgb(212, 212, 212);
 }
@@ -557,20 +386,19 @@ footer>section>section h2:hover {
 footer>section>section>ul>li>a:hover {
   color: rgb(212, 212, 212);
 }
+
 footer>section>section>ul>li {
   padding-top: 10px;
 }
+
 footer>section>section>ul {
   list-style: none;
   display: none;
 }
+
 footer>section>section>ul.laatZien {
   display: unset;
 }
-/* .laatZien {
-  display: visible;
-} */
-
 
 footer>section>section>ul>li:last-of-type {
   padding-bottom: 30px;
@@ -584,8 +412,6 @@ footer>section>section>ul>li>a {
 footer section>section>p {
   align-self: center;
   font-size: 16px;
-
-  /* transform-origin: rotate(12deg); */
   color: white;
 }
 
@@ -594,71 +420,154 @@ footer>section:last-of-type>section:first-of-type {
   flex-flow: row wrap;
   justify-content: space-between;
 }
+
 footer>section:last-of-type>section:nth-of-type(2) {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
+
 footer>section:last-of-type>section:last-of-type {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-
-
-
-
-
 footer>p {
   align-self: center;
-  /* border: dotted 2px rgb(73, 16, 75); */
   font-size: 10px;
   padding: 20px 0 27px 0;
 }
 
 
+/****************************>>> FOOTER END <<<******************************/
 
 
 
+/**************************************************************************************************************************
+>>>>>>>>>> @MEDIA <<<<<<<<<<
+**************************************************************************************************************************/
+
+@media screen and (min-width: 640px) {
+  
+  /****** MAIN ******/
+
+  main>nav>a:last-of-type>h2 {
+    transform: scaleX(.8);
+  }
+  main>nav>a>h2{
+    font-size: 6.2em;
+  }
+}
+
+@media screen and (min-width: 798px) {
+
+  /****** HEADER ******/
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header nav button:last-of-type {
+    display: none;
+  }
+
+  header nav ul {
+    position: static;
+    left: auto;
+    top: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    transform: none;
+    padding: 0;
+  }
+  header nav ul li {
+    margin-bottom: 0;
+  }
+
+  header nav ul a {
+    display: block;
+    color: black;
+    opacity: 100%;
+  }
+  
+
+  /****** MAIN ******/
+
+  main>nav>a:last-of-type>h2 {
+    transform: scaleX(1);
+  }
+
+
+  /****** FOOTER ******/
+
+  footer>section>section>ul {
+    display: unset;
+  }
+  footer>section:last-of-type>section {
+    padding: 0 20px 10px 20px;
+  }
+  footer>section:last-of-type {
+    max-width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  footer>section>section {
+    border-top: none;
+  } 
+  footer>section>section>p {
+    display: none;
+  }
+  footer>section>section>h2 {
+    padding: 0 15px 5px 0;
+    margin-bottom: 20px;
+    border-bottom: solid 1px white;
+  }
+  footer>section:last-of-type {
+    border-bottom: none;
+  }
+
+} 
+
+
+/****************************>>> @MEDIA END <<<******************************/
+
+
+
+/**************************************************************************************************************************
+>>>>>>>>>> EXTRA'S <<<<<<<<<<
+**************************************************************************************************************************/
 
 
 
 /****>>> ERROR PAGE <<<****/
 
 .error {
+  display: block;
   justify-content: center;
   text-align: center;
-  margin-bottom: 200px;
+  margin: 70px 50px 20px 50px;
+  text-decoration: none;
+  color: #333;
 }
 
 .error main {
-  height: calc(100vh - 470px);
+  max-height: calc(100vh - 470px);
   padding: 20vw;
-}
-.error div {
-  float: right;
-  width: 300px;
-  border: 3px solid #73AD21;
-  padding: 10px;
+  overflow-y: hidden;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+a.error {
+  display: inline-block;
+  width: 270px;
+  height: 35px;
+  margin: 50px calc(50% - 135px) 70px calc(50% - 135px);
+  border: solid 1px black;
+  padding: 8px;
+}
